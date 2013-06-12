@@ -1,0 +1,11 @@
+<ul>
+  <% comments.each do |comment| %>
+    <li>
+      <button class="upvote" data-id="<%= comment.id %>" data-type="comment">U</button>
+      <button class="downvote" data-id="<%= comment.id %>" data-type="comment">D</button>
+      <p><a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a> <span class="points"><%= comment.points %></span> points, <%= time_ago_in_words(comment.created_at) %> on: 
+      <a href="/post/<%= comment.post.id %>"><%= comment.post.title %></a></p>
+      <p><%= comment.text %></p>
+    </li>
+  <% end %>
+</ul>

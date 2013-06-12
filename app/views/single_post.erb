@@ -1,0 +1,13 @@
+<h2><%= post.title %></h2>
+<p><%= post.body %></p>
+<ol>
+  <% post.comments.each do |comment| %>
+  <li>
+    <button class="upvote" data-id="<%= comment.id %>" data-type="comment">U</button>
+    <button class="downvote" data-id="<%= comment.id %>" data-type="comment">D</button>
+    <h3><a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a></h3>
+    <p><%= comment.text %></p>
+    <p><span class="points"><%= comment.points %></span> points, <%= comment.created_at %></p>
+  </li>
+  <% end %>
+</ol>

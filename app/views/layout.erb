@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li id="hacker-news"><a href="/">Hacker News</a></li>
+        <li>new</li>
+        <li>comments</li>
+        <li>ask</li>
+        <li>jobs</li>
+        <li>submit</li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<ol>
+  <% posts.each do |post| %>
+    <li>
+      <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
+      <button class="upvote" data-id="<%= post.id %>" data-type="post">U</button>
+      <button class="downvote" data-id="<%= post.id %>" data-type="post">D</button> 
+      <p><span class="points"><%= post.points %></span> points by 
+        <a href="/user/<%= post.user.id %>"><%= post.user.name %></a> 
+        <%= time_ago_in_words(post.created_at) %> 
+        | <a href="/post/<%= post.id %>"><%= post.comments.count %> comments</a></p>
+    </li>
+  <% end %>
+</ol>
